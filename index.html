@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="short icon" href="assets/img/favicon.ico">
+    <!--ICONES REMIX-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"rel="stylesheet"/>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <title>Python Learning</title>
+</head>
+<body>
+    <section class="sec">
+        <header>
+            <a href="#"><img src="assets/img/vecteezy_logotipo-del-lenguaje-de-programacion-3d-python_12697295.png" alt="logo" class="logo"></a>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="pages/data.html">Estrutura de Dados</a></li>
+                <li><a href="pages/concurrent.html">Programacao concorrente</a></li>
+                <li><a href="pages/ml.html">Machine Learning</a></li>
+                <li><a href="pages/dl.html">Deep Learning</a></li>
+                <li><a href="pages/cv.html">Visao Computacional</a></li>
+                <li><a href="pages/memory.html">Memoria</a></li>
+                <li><a href="pages/micro.html">Micro Python</a></li>
+                <li><a href="pages/info.html">Source</a></li>
+            </ul>
+        </header>
+        <div class="content">
+            <div class="text-box">
+                <h2>Explore o Poder do Python:<span>Tutoriais para Desbravar Novos Horizontes!</span></h2>
+                <p>Embarque em uma jornada de descoberta e aprendizado com nosso blog, onde desvendamos o poder do Python através de tutoriais cuidadosamente elaborados. Dos fundamentos às técnicas avançadas, nossos guias são projetados para capacitá-lo a desbravar novos horizontes na programação. Descubra como Python pode impulsionar suas habilidades de desenvolvimento e abrir portas para infinitas possibilidades criativas. </p>
+            </div>
+            <div class="img-box">
+                <img src="assets/img/vecteezy_logotipo-del-lenguaje-de-programacion-3d-python_12697295.png" alt="img" class="python-logo">
+            </div>
+        </div>
+    </section>
+    
+    <!-- Exemplo de evento de clique em um botão -->
+    <button id="meuBotao">Clique Aqui</button>
+    
+    <!-- Exemplo de evento de passagem do mouse sobre um elemento -->
+    <div id="meuElemento">Passe o mouse sobre mim</div>
+    
+    <!-- Exemplo de evento de entrada de texto em um campo de formulário -->
+    <input type="text" id="meuCampo" placeholder="Digite aqui">
+    <p id="textoDigitado"></p>
+
+    <!-- Scripts JavaScript -->
+    <script>
+        // Evento de clique em um botão
+        document.getElementById("meuBotao").addEventListener("click", function() {
+            alert("Você clicou no botão!");
+        });
+
+        // Evento de passagem do mouse sobre um elemento
+        document.getElementById("meuElemento").addEventListener("mouseover", function() {
+            this.style.backgroundColor = "lightgreen";
+        });
+
+        document.getElementById("meuElemento").addEventListener("mouseout", function() {
+            this.style.backgroundColor = "lightblue";
+        });
+
+        // Evento de entrada de texto em um campo de formulário
+        document.getElementById("meuCampo").addEventListener("input", function() {
+            document.getElementById("textoDigitado").innerText = "Texto digitado: " + this.value;
+        });
+    </script>
+
+    <!-- main script-->
+    <script src="assets/js/index.js"></script>
+</body>
+</html>

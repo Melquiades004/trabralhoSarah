@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+      <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="short icon" href="../assets/img/favicon.ico">
+    <!--ICONES REMIX-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"rel="stylesheet"/>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <title>Python Learning</title>
+
+    </head>
+
+    <body>
+
+        <!-- Navigation -->
+
+
+        <!-- Home -->
+        <section id="blog-container">
+            <div class="blogs blogpost">
+                <div class="post">
+                    <img src="../assets/img/dataStructuresR.png">
+                    <h3>Dominando Estruturas de Dados em Python: Construa uma Base Sólida para seus Projetos de Programação</h3>
+                    <p>Você já ouviu falar sobre estruturas de dados em Python, mas talvez não saiba por onde começar ou como aplicá-las efetivamente em seus projetos de programação. Neste guia abrangente, vamos mergulhar fundo no mundo das estruturas de dados em Python, explorando suas características, funcionalidades e aplicações práticas.</p>
+                    <br>
+                    <p>
+                        <span>O que são Estruturas de Dados?</span><br>As estruturas de dados são uma forma de organizar e armazenar dados em computadores, de forma que possamos realizar operações com mais eficiência. As estruturas de dados têm um escopo amplo e diversificado, em toda a área de ciência da computação e engenharia de software. Estruturas de dados estão sendo usadas em quase todos os sistemas ou softwares escritos para os mais diversos fins. Além disso, são um tópico-chave para diferenciar a qualidade técnica de um programador, por isso como desenvolvedores, devemos ter um bom conhecimento sobre as principais estrutura e sua empregabilidade em sistemas de informação e linguagens de programação. Neste artigo, estarei explicando brevemente 8 tipos de estruturas de dados comumente usadas, e que praticamente todo programador deve dominar.
+                    </p>
+                    <p>
+                        <span>Arrays ou Matrizes</span><br>Uma matriz (ou array em inglês) é uma estrutura de tamanho fixo (mesmo que algumas linguagens a implementem de forma diferente), que pode conter itens de um mesmo tipo de dados. Pode ser uma matriz de inteiros, uma série de números de ponto flutuante, uma matriz de strings ou até mesmo uma matriz de matrizes (como matrizes multidimensionais). As matrizes são indexadas, o que significa que o acesso aleatório é possível. 
+
+Array é uma das estruturas de dados mais simples que existe e uma das mais utilizadas. Algumas operações são possíveis como percorrer todos os seus elementos, acessar um elemento específico ou imprimir e alterar os valores. Você pode pesquisar o elemento pelo seu valor ou pelo seu índice. Algumas linguagens e sistemas permitem que o programador atualize um array, inserindo elementos ou exclusão de elementos, mais saiba que internamente isso é feito primeiro terá que criar uma nova matriz com o tamanho maior (tamanho atual + 1), copiar os elementos existentes e adicione o novo elemento. O mesmo vale para a exclusão com uma nova matriz de tamanho reduzido.
+
+Aplicações de matrizes: Usado como blocos de construção primários para construir outras estruturas de dados, como listas, pilhas, tabelas de hash, vetores, planilhar dados, esta estrutura básica é mais amplamente usado para diferentes algoritmos de classificação. O índice nos ajuda a percorrer o Array, permitindo que o elemento daquela determinada posição possa ser armazenado, acessado, atualizado, excluído, enfim, manipulado. O índice pode andar da esquerda pra direita. O índice é o contador, e se a cada iteração que fizermos, este contador for incrementado ou decrementado, para podermos caminhar no array. Ulguns algoritmos de busca, como a busca binária, se beneficia muito de estruturas tipo ARRAY.</p>
+                        <p><span>Listas (Arrays Associativos)</span><br>
+É uma estrutura sequencial que consiste em uma série de itens em ordem linear que estão ligadas entre si. Portanto, você tem que acessar os dados sequencialmente e o acesso aleatório não é possível. Fornecem uma representação simples e flexível de conjuntos dinâmicos. Os elementos são conhecidos como nós, onde cada nó contém uma chave e um ponteiro para o proximo nó. O atributo chamado Head aponta para o primeiro elemento da lista e o último elemento é conhecido como a cauda.<br><br>
+Listas podem ser de alguns tipos a saber:  LISTA SIMPLES (SINGLE LINKED) – Seus elementos só podem ser percorridos em uma direção. LISTA DUPLA (DOUBLE LINKED) – Os nós podem ser pecorridos para frente e para trás, um ponteiro adicional conhecido como prev, apontando para o nó anterior é adicionado. LISTAS CIRCULARES (CIRCULAR LINKED) – São listas sem fim, o ponteiro prev da head aponta para a cauda e o próximo ponteiro da cauda aponta para a cabeça.<br><br>
+Neste tipo de estrutura, as operações de inserção e exclusão de itens são muito mais rápidas, pois por exemplo para se inserir um item em qualquer posição da lista, basta copiar os dados dos ponteiros (prev e next) do nó atual, para os respectivos endereços do nó a ser incluido, e substituir os valores nos nós de destino. O mesmo se aplica a exclusão de registros. Portanto, para acrescenter uma série de registros, basta fazer a mesma operação com os ponteiros da HEAD e TAIL (cauda) e a nova lista já incorporou todos os registros da anterior.<br><br>É uma estrutura muito usada para a gestão de tabela de símbolos no projeto de compiladores. Esta é a estrutura que fica por “DEBAIXO DO CAPÔ” que permite que o controle de CPU e Threads para a alternância de processos seja realizada (até o ALT+TAB para alterar entre aplicativos é feito assim). Uma outra utilidade das listas é por exemplo em sistemas onde existe uma fila, por exemplo para um processamento assincrono de requisições, não necessariamente, estes elementos estão fisicamente em sequência, mas a idéia é que exista uma ordem lógica entre eles, por exemplo como um consultório médico onde mesmo que os pacientes estejam sentados aleatóriamente na sala, eles sabem quem é o próximo a ser atendido, seja pela ordem de chegada, ou pela gravidade do caso, ou por qualquer outro critério. Portanto é importante ressaltar que uma lista permite representar um conjunto de dados de um mesmo tipo ou de alguma maneira relacionado de forma a preservar essa relação de ordem entre seus elementos.</p>
+                    <p>
+                        <span>Pilhas</span><br>Uma pilha é uma estrutura LIFO (Last In First Out – o elemento colocado por último será acessado primeiro) que pode ser comumente encontrada em muitas linguagens de programação. Essa estrutura é chamada de “pilha” porque se assemelha a uma pilha do mundo real por exemplo como uma pilha de pratos.
+
+As 3 operações básicas que podem ser realizadas em uma pilha são inserir e retirar um item, veja ao lado. PUSH ou empurrar, insere um elemento no topo da pilha. POP ou Excluir o elemento superior (retornando-o ou não). PEEK ou Pegar retorna o elemento superior da pilha sem excluí-lo. Além disso 2 operações podem ser também possíveis isEmpty para verificar se a pilha está vazia e isFull para verificar se a pilha está cheia.
+
+Uma das aplicações mais usuais da pilha, é para avaliações de expressões (por exemplo: algoritmo de jarda de manobra para analisar e avaliar expressões matemáticas). Usado para implementar chamadas de função na programação de recursão, onde é possivel retornar para o processo anterior após finalizar o atual. Fazer o balanceamento de elementos (por exemplo saber se tags abertas estão corretamente fechadas, ou o uso de aninhadores como colchetes, chaves e parenteses, entre outros usos. Esta é sem dúvida uma das implementações mais importantes em análise e implementação de compiladores e analisadores léxicos.</p>
+                    <p>
+                        <span>Filas</span><br>Uma fila é uma estrutura FIFO (Primeiro a Entrar, Primeiro a Sair – o elemento colocado primeiro pode ser acessado primeiro) que pode ser comumente encontrada em muitas linguagens de programação. Essa estrutura é chamada de “fila” porque se assemelha a uma fila do mundo real como por exemplo pessoas esperando em uma fila de banco.
+
+As 2 operações básicas que podem ser executadas em uma fila, são Enfileirar, ou insira um elemento no final da fila e Desenfileirar: excluir o elemento do início da fila, trazendo seu valor. Outras 2 operações são possíveis, IsEmpty para saber se a fila está vazia e IsFull para saber se está cheia.
+
+São amplamente usadas para gerenciar threads em multithreading. E para controles de sistemas de enfileiramento como filas de processamento em sistemas síncronos, processamento sequencial, algumas estruturas podem ser construídas aninhando-se filas, por exemplo para controle de filas priotirárias (em outra oportunidade vamos falar do agrupamento de diferentes estruturas básicas para implementar estruturas complexas).</p>
+                    <p>
+                        <span>Tabelas de hash</span><br>Uma Hash Table é uma estrutura de dados que armazena valores que possuem chaves associadas a cada um deles e oferecem suporte à pesquisa de forma eficiente se conhecermos a chave associada ao valor. Portanto, é muito eficiente na inserção e pesquisa, independentemente do tamanho dos dados. O endereçamento direto usa o mapeamento um-para-um entre os valores e as chaves ao armazenar em uma tabela. No entanto, há um problema com essa abordagem quando há um grande número de pares de valores-chave. A tabela ficará enorme com tantos registros e pode ser impraticável ou até impossível de ser armazenada, dada a memória disponível em um computador típico. Para evitar esse problema, usamos tabelas de hash.
+
+Função Hash é uma função especial que é usada para superar o problema mencionado anteriormente no endereçamento direto. No acesso direto, um valor com a chave k é armazenado no slot k. Usando a função hash, calculamos o índice da tabela (slot) para a qual cada valor vai. O valor calculado usando a função hash para uma determinada chave é chamado de valor hash, que indica o índice da tabela para a qual o valor é mapeado. h (k) = k% m onde h é a função Hash, k a chave da qual o valor hash deve ser determinado, m o tamanho da tabela hash (número de slots disponíveis). Um valor primo que não está perto de uma potência exata de 2 é uma boa escolha para m.
+
+Estas estruturas são muito usadas em índices de banco de dados, para se criar a correspondência de determinados valores com os registros, implementar matrizes associativas onde é possível associar chaves valor (como JSON por exemplo) e implementar estruturas de dados “definidas”, ou seja, com um tamanho conhecido.</p>
+<p>
+                        <span>Arvores</span><br>Uma árvore é uma estrutura hierárquica em que os dados são organizados hierarquicamente e vinculados entre os ramos pais e filhos. Essa estrutura é diferente de uma lista vinculada, ao passo que, em uma lista vinculada, os itens são vinculados em uma ordem linear.
+
+Vários tipos de árvores foram desenvolvidos ao longo das últimas décadas, a fim de se adequar a certas aplicações e atender a certas restrições. Alguns exemplos são árvore de pesquisa binária, árvore B, treap, árvore red-black, árvore splay, árvore AVL e árvore n-ária.
+
+Árvores Binárias de Busca
+
+Uma árvore de pesquisa binária, como o nome sugere, é uma árvore binária onde os dados são organizados em uma estrutura hierárquica. Esta estrutura de dados armazena valores em ordem de classificação. Cada nó em uma árvore de pesquisa binária compreende uma CHAVE (KEY) que é o valor do nó, um  ponteiro para o nó a direita, outro para o nó a esquerda (maior e menor) e um ponteiro para o nó pai. Árvores binárias são usadas para implementar analisadores e solucionadores de expressões.</p>
+<p>
+                        <span>Montes (HEAPS)</span><br>Um Heap é um caso especial de uma árvore binária onde os nós pais são comparados a seus filhos com seus valores e são organizados de acordo com essas comparações. Os HEAPS podem ser de 2 tipos MinHeap onde a chave do pai é menor ou igual à de seus filhos a raiz conterá o valor mínimo do heap. MaxHeap onde a chave do pai é maior ou igual à de seus filhos ea raiz conterá o valor máximo do heap.
+
+HEAPS são importantes em algoritmos de classificação como o heapsort, usado para implementar filas de prioridade, pois os valores de prioridade podem ser ordenados de acordo com a propriedade heap onde o heap pode ser implementado usando uma matriz ou array.</p>
+<p>
+                        <span>Grafos (GRAPH)</span><br>Um grafo consiste em um conjunto finito de vértices ou nós e um conjunto conectando esses vértices. A ordem de um grfo é o número de vértices no gráfico. O tamanho de um gráfico é o número de arestas deste. Dois nós são considerados adjacentes se estiverem conectados um ao outro pela mesma aresta.
+
+Um grafo G é considerado um grafo direcionado se todas as suas arestas têm uma direção que indica qual é o vértice inicial e qual é o vértice final. Auto-loops são arestas de um vértice para ele mesmo.
+
+Um grafo G é considerado um grafo não direcionado se todas as suas arestas não tiverem direção. Ele pode ir em ambos os sentidos entre os dois vértices. Se um vértice não estiver conectado a nenhum outro nó do grafo, é dito que está isolado.
+
+Aplicações de grafos, por exemplo para representar redes de mídia social, onde cada usuário é um vértice e, quando os usuários se conectam, criam uma aresta. Usado para representar páginas da web e links por mecanismos de pesquisa onde as páginas da Internet estão vinculadas umas às outras por meio de hiperlinks. Cada página é um vértice e o hiperlink entre duas páginas é uma borda, este é o mecanismo usado para a classificação de uma página por exemplo no Google.
+
+Grafos podem ser usados para representar locais e rotas em um GPS, pois as localizações são vértices e as rotas que conectam as localizações são arestas. Usado para calcular a rota mais curta entre dois locais. e uma infinidade de outras utilizações.
+
+</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- post -->
+
+        <!-- Footer -->
+
+
+        <script>
+
+            // Navaigation Bar
+
+        </script>
+
+
+    </body>
+
+</html>
