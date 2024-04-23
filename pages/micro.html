@@ -23,44 +23,61 @@
                 <div class="post">
                     <img src="../assets/img/Mapa_Pinos_Pyboard1.jpg.webp">
                     <h3>MicroPython: Python para microcontrolador</h3>
-                    <p>A MicroPython (conhecida também como Pyboard) é uma implementação da linguagem de programação Python 3 otimizada para operar em microcontrolador. A Pyboard é uma pequena placa de circuito impresso que executa a aplicação em bare metal. Além disso, entrega ao usuário um sistema de operação Python em baixo nível, o qual pode ser usado para controlar todos os tipos de projetos eletrônicos.</p>
+                    <p>A MicroPython (conhecida também como Pyboard) é uma implementação da linguagem de programação
+                        Python 3 otimizada para operar em microcontrolador. A Pyboard é uma pequena placa de circuito
+                        impresso que executa a aplicação em bare metal. Além disso, entrega ao usuário um sistema de
+                        operação Python em baixo nível, o qual pode ser usado para controlar todos os tipos de projetos
+                        eletrônicos.</p>
                     <br>
+                    <p><span>Motivação</span><br>A motivação que levou a criar este artigo é divulgar essa ferramenta
+                        potente que implementa uma linguagem de alto nível como o Python 3 em sistemas embarcados,
+                        criando os mais variados projetos com pouquíssimo esforço, pois não necessita de uma IDE
+                        específica para edição. Dispõe de um hardware bem robusto e uma biblioteca de abstração de
+                        camada (HAL) disponível e aplicação, a qual será apresentada logo mais.</p>
                     <p>
-                        <span>Motivação</span><br>A motivação que levou a criar este artigo é divulgar essa ferramenta potente que implementa uma linguagem de alto nível como o Python 3 em sistemas embarcados, criando os mais variados projetos com pouquíssimo esforço, pois não necessita de uma IDE específica para edição. Dispõe de um hardware bem robusto e uma biblioteca de abstração de camada (HAL) disponível e aplicação, a qual será apresentada logo mais.    
-
-
-                    </p>
+                        <span>Pyboard (MicroPython)</span><br>A Pyboard é composta por: STM32F405RG (microcontrolador
+                        ARM Cortex-M4 com Unidade de Ponto Flutuante – FPU), acelerômetro da NXP de três eixos, o MMA7660FC,
+                        também conta com com um regulador LDO MCP1802 da Microchip para alimentação do circuito, slot
+                        para cartão de memória Flash microSD (opção para fazer o boot ao invés da memória Flash do
+                        microcontrolador), duas chaves Tact Switch (uma para aplicação e outra para Reset) e também
+                        quatro LEDs (vermelho, verde, amarelo e azul) para propósito geral e para indicação do status
+                        da Pyboard quando faz o “boot”. A seguir a Pyboard: Como podemos ver na figura 1, a Pyboard
+                        dispõe de todos os GPIOs para acesso (furos na PCI), logo o mapa de todos eles poderão ser
+                        vistos na figura 2. Além disso, o esquema eletrônico/layout da placa e as dimensões são abertos
+                        para visualização. A placa também oferece alguns outros periféricos que podem ser agregados
+                        a ela, como por exemplo: um módulo LCD com teclas capsense, módulo de áudio e também módulo
+                        Bluetooth. Todos possuem biblioteca para se fazer as aplicações.</p>
                     <p>
-                        <span>Pyboard (MicroPython)</span><br>A Pyboard é composta por: STM32F405RG (microcontrolador ARM Cortex-M4 com Unidade de Ponto Flutuante – FPU), acelerômetro da NXP de três eixos, o MMA7660FC, também conta com com um regulador LDO MCP1802 da Microchip para alimentação do circuito, slot para cartão de memória Flash microSD (opção para fazer o boot ao invés da memória Flash do microcontrolador), duas chaves Tact Switch (uma para aplicação e outra para Reset) e também quatro LEDs (vermelho, verde, amarelo e azul) para propósito geral e para indicação do status da Pyboard quando faz o “boot”. A seguir a Pyboard: Como podemos ver na figura 1, a Pyboard dispõe de todos os GPIOs para acesso (furos na PCI), logo o mapa de todos eles poderão ser vistos na figura 2. Além disso, o esquema eletrônico/layout da placa e as dimensões são abertos para visualização. A placa também oferece alguns outros periféricos que podem ser agregados a ela, como por exemplo: um módulo LCD com teclas capsense, módulo de áudio e também módulo Bluetooth. Todos possuem biblioteca para se fazer as aplicações.</p>
-                        <p><span>Funcionamento</span><br>A Pyboard possui um compilador e uma Máquina Virtual (Virtual Machine) embutidos. Este sistema foi concebido através do desenvolvimento do firmware (em C) o qual já é gravado no microcontrolador STM32F405RG desde a montagem da PCI. O objetivo desse sistema é traduzir os Scripts Python (compilador) e executar os Bytecodes (Máquina Virtual). Deste modo, executando a aplicação que foi escrita na “main.py”. É válido lembrar que uma vez compilada a aplicação e gerado o bytecode, não mais será necessário compilar em um “reboot” da placa. Esse bytecode sempre será executado, a não ser que a aplicação mude. Para mais detalhes do funcionamento do compilador e máquina virtual Python, leia o artigo deste link disposto no portal PythonBrasil.
-
-Em poucas palavras, basta editar o arquivo “main.py” contido na placa (poderá ser editado após a instalação automática do driver da Pyboard), fazer “reboot” da placa e esperar que a aplicação funcione, simples assim! Desde que não haja erros de sintaxe e lógica (situação sinalizada pelo LED vermelho que ficará aceso).
-
-O firmware citado, além de conter o compilador e a M.V., também possui as bibliotecas padrão Python, as específicas MicroPython, além das de propósito da placa, ou seja, de configuração e utilização dos periféricos: GPIO, ADC, DAC, RTC, controle da placa, LEDs, controle de servo motor, acelerômetro, interrupções externas, TIMERs, PWM, UART, SPI e I2C. Todas elas podem ser acessadas por meio do comando: from pyb import gpio, por exemplo, apenas modificando a última palavra para se fazer o uso do periférico desejado. Todo o código elaborado para este projeto, além de suas versões, documentações e atuais trabalhos, estão contidos no GitHub e podem ser acessados neste link.</p>
-<video width="640" height="360" controls>
-        <source src="../assets/mp4/Embedded Systems and Artificial Intelligence For Medicine. Project Integration (online-video-cutter.com).mp4" type="video/mp4">
-        Seu navegador não suporta o elemento de vídeo.
-    </video>
-    <audio controls>
-        <source src="../assets/mp3/Embedded Systems and Artificial Intelligence For Medicine. Project Integration [TubeRipper.com].m4a" type="audio/mpeg">
-        Seu navegador não suporta o elemento de áudio.
-    </audio>
+                        <span>Funcionamento</span><br>A Pyboard possui um compilador e uma Máquina Virtual (Virtual
+                        Machine) embutidos. Este sistema foi concebido através do desenvolvimento do firmware (em C)
+                        o qual já é gravado no microcontrolador STM32F405RG desde a montagem da PCI. O objetivo
+                        desse sistema é traduzir os Scripts Python (compilador) e executar os Bytecodes (Máquina Virtual).
+                        Deste modo, executando a aplicação que foi escrita na “main.py”. É válido lembrar que uma
+                        vez compilada a aplicação e gerado o bytecode, não mais será necessário compilar em um “reboot”
+                        da placa. Esse bytecode sempre será executado, a não ser que a aplicação mude. Para mais detalhes
+                        do funcionamento do compilador e máquina virtual Python, leia o artigo deste link disposto
+                        no portal PythonBrasil. Em poucas palavras, basta editar o arquivo “main.py” contido na placa
+                        (poderá ser editado após a instalação automática do driver da Pyboard), fazer “reboot” da placa
+                        e esperar que a aplicação funcione, simples assim! Desde que não haja erros de sintaxe e lógica
+                        (situação sinalizada pelo LED vermelho que ficará aceso). O firmware citado, além de conter
+                        o compilador e a M.V., também possui as bibliotecas padrão Python, as específicas MicroPython,
+                        além das de propósito da placa, ou seja, de configuração e utilização dos periféricos: GPIO,
+                        ADC, DAC, RTC, controle da placa, LEDs, controle de servo motor, acelerômetro, interrupções
+                        externas, TIMERs, PWM, UART, SPI e I2C. Todas elas podem ser acessadas por meio do comando:
+                        from pyb import gpio, por exemplo, apenas modificando a última palavra para se fazer o uso
+                        do periférico desejado.</p>
+                <video width="640" height="360" controls>
+                    <source src="../assets/mp4/Embedded Systems and Artificial Intelligence For Medicine. Project Integration (online-video-cutter.com).mp4" type="video/mp4">
+                    Seu navegador não suporta o elemento de vídeo.
+                </video>
+                <audio controls>
+                    <source src="../assets/mp3/Embedded Systems and Artificial Intelligence For Medicine. Project Integration [TubeRipper.com].m4a" type="audio/mpeg">
+                    Seu navegador não suporta o elemento de áudio.
+                </audio>
                 </div>
             </div>
         </section>
-
-        <!-- post -->
-
-        <!-- Footer -->
-
-
         <script>
-
-            // Navaigation Bar
-
         </script>
-
-
     </body>
-
 </html>

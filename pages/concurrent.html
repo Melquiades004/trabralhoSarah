@@ -5,115 +5,85 @@
         <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="short icon" href="../assets/img/favicon.ico">
-    <!--ICONES REMIX-->
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"rel="stylesheet"/>
     <link rel="stylesheet" href="../assets/css/styles.css">
     <title>Python Learning</title>
 
     </head>
 
     <body>
-
-        <!-- Navigation -->
-
-
         <!-- Home -->
         <section id="blog-container">
             <div class="blogs blogpost">
                 <div class="post">
                     <img src="../assets/img/1_QJ-VfnlAKlH8YPr6hNzwzQ.webp">
                     <h3>PROGRAMAÇÃO CONCORRENTE</h3>
-                    <p>A programação concorrente foi usada inicialmente na construção de sistemas operacionais. 
-Atualmente, ela é usada para desenvolver aplicações em todas as áreas da computação. Este tipo 
-de programação tornou-se ainda mais importante com o advento dos sistemas distribuídos e das 
-máquinas com arquitetura paralela. Neste capítulo serão apresentados os conceitos básicos e os 
-mecanismos clássicos da programação concorrente. Maiores detalhes podem ser encontrados no 
-livro</p>
-                    <br>
-                    <p>
-                        <span>Definicao</span><br>A grande maioria dos programas escritos são programas seqüenciais. Nesse caso, existe 
-somente um fluxo de controle (fluxo de execução, linha de execução, thread) no programa. Isso 
-permite, por exemplo, que o programador realize uma "execução imaginária" de seu programa 
-apontando com o dedo, a cada instante, o comando que está sendo executada no momento.
-Um programa concorrente pode ser visto como se tivesse vários fluxos de execução. 
-Para o programador realizar agora uma "execução imaginária", ele vai necessitar de vários dedos, 
-um para cada fluxo de controle. 
-O termo "programação concorrente" vem do inglês concurrent programming, onde 
-concurrent significa "acontecendo ao mesmo tempo". Uma tradução mais adequada seria 
-programação concomitante. Entretanto, o termo programação concorrente já está solidamente 
-estabelecido no Brasil. Algumas vezes é usado o termo programação paralela com o mesmo 
-sentido.
-É comum em sistemas multiusuário que um mesmo programa seja executado 
-simultaneamente por vários usuários. Por exemplo, um editor de texto. Entretanto, ter 10 
-execuções simultâneas do editor de texto não faz dele um programa concorrente. O que se tem 
-são 10 processos independentes executando o mesmo programa seqüencial (compartilhando o 
-mesmo código). Cada processo tem a sua área de dados e ignora a existência das outras 
-execuções do programa. Esses processos não interagem entre si (não trocam informações). Um 
-programa é considerado concorrente quando ele (o próprio programa, durante a sua execução) 
-origina diferentes processos. Esses processos, em geral, irão interagir entre si.</p>
-                    <p>
-                        <span>Motivação</span><br>A programação concorrente é mais complexa que a programação seqüencial. Um programa 
-concorrente pode apresentar todos os tipos de erros que aparecem nos programas seqüenciais e, 
-adicionalmente, os erros associados com as interações entre os processos. Muitos erros dependem 
-do exato instante de tempo em que o escalonador do sistema operacional realiza um chaveamento 
-de contexto. Isso torna muitos erros difíceis de reproduzir e de identificar.
-Apesar da maior complexidade, existem muitas áreas nas quais a programação 
-concorrente é vantajosa. Em sistemas nos quais existem vários processadores (máquinas paralelas 
-ou sistemas distribuídos), é possível aproveitar esse paralelismo e acelerar a execução do 
-programa. Mesmo em sistemas com um único processador, existem razões para o seu uso em 
-vários tipos de aplicações<br><br>Considere um programa que deve ler registros de um arquivo, colocar em um formato 
-apropriado e então enviar para uma impressora física (em oposição a uma impressora lógica ou 
-virtual, implementada com arquivos). Podemos fazer isso com um programa seqüencial que, 
-dentro de um laço, faz as três operações (ler, formatar e imprimir registro).<br><br>Inicialmente o processo envia um comando para a leitura do arquivo e fica bloqueado. O 
-disco então é acionado para realizar a operação de leitura. Uma vez concluída a leitura, o 
-processo realiza a formatação e inicia a transferência dos dados para a impressora. Como trata-se 
-de uma impressora física, o processo executa um laço no qual os dados são enviados para a porta 
-serial ou paralela apropriada. Como o buffer da impressora é relativamente pequeno, o processo 
-fica preso até o final da impressão. O disco e a impressora nunca trabalham simultaneamente, 
-embora isso seja possível. É o programa seqüencial que não consegue ocupar ambos.
-Vamos agora considerar um programa concorrente como o mostrado na figura 2 para 
-realizar a impressão do arquivo. Dois processos dividem o trabalho. O processo leitor é 
-responsável por ler registros do arquivo, formatar e colocar em um buffer na memória. O 
-processo impressor retira os dados do buffer e envia para a impressora. É suposto aqui que os dois 
-processos possuem acesso à memória onde está o buffer. Este programa é mais eficiente, pois 
-consegue manter o disco e a impressora trabalhando simultaneamente. O tempo total para realizar 
-a impressão do arquivo vai ser menor.
-O uso da programação concorrente é natural nas aplicações que apresentam paralelismo 
-intrínseco, ditas aplicações inerentemente paralelas. Nessas aplicações pode-se distinguir 
-facilmente funções para serem realizadas em paralelo. Este é o caso do spooling de impressão, 
-exemplo que será apresentado a seguir. Pode-se dizer que, em geral, a programação concorrente 
-tem aplicação natural na construção de sistemas que tenham de implementar serviços que são</p>
-                        <p><span>Especificação do paralelismo</span><br>Para construir um programa concorrente, antes de mais nada, é necessário ter a capacidade de 
-especificar o paralelismo dentro do programa. Essa especificação pode ser feita de diversas 
-maneiras. Uma delas utiliza os comandos fork, quit e join [CON63]. Outras maneiras serão 
-apresentadas na seção 4.
-O comando (ou função) fork pode ser implementado de duas maneiras distintas: ele pode 
-criar um novo processo ou criar apenas um novo fluxo de execução dentro de um processo já 
-existente. A função fork retorna um número inteiro que é a identificação do novo processo ou do 
-novo fluxo criado. Um fluxo de execução também é denominado linha de execução ou thread.<br><br>Para construir um programa concorrente, antes de mais nada, é necessário ter a capacidade de 
-especificar o paralelismo dentro do programa. Essa especificação pode ser feita de diversas 
-maneiras. Uma delas utiliza os comandos fork, quit e join [CON63]. Outras maneiras serão 
-apresentadas na seção 4.
-O comando (ou função) fork pode ser implementado de duas maneiras distintas: ele pode 
-criar um novo processo ou criar apenas um novo fluxo de execução dentro de um processo já 
-existente. A função fork retorna um número inteiro que é a identificação do novo processo ou do 
-novo fluxo criado. Um fluxo de execução também é denominado linha de execução ou thread.
+                    <p>A programação concorrente foi usada inicialmente na construção de sistemas operacionais. Atualmente,
+                        ela é usada para desenvolver aplicações em todas as áreas da computação. Este tipo  de programação
+                        tornou-se ainda mais importante com o advento dos sistemas distribuídos e das  máquinas com arquitetura
+                        paralela. Neste capítulo serão apresentados os conceitos básicos e os  mecanismos clássicos da programação
+                        concorrente. Maiores detalhes podem ser encontrados no livro</p><br>
+                    <p><span>Definicao</span><br>A grande maioria dos programas escritos são programas seqüenciais. Nesse caso,
+                        existe somente um fluxo de controle (fluxo de execução, linha de execução, thread) no programa. Isso
+                        permite, por exemplo, que o programador realize uma "execução imaginária" de seu programa  apontando
+                        com o dedo, a cada instante, o comando que está sendo executada no momento. Um programa concorrente pode
+                        ser visto como se tivesse vários fluxos de execução.  Para o programador realizar agora uma "execução
+                        imaginária", ele vai necessitar de vários dedos, um para cada fluxo de controle.  O termo "programação
+                        concorrente" vem do inglês concurrent programming, onde  concurrent significa "acontecendo ao mesmo tempo".
+                        Uma tradução mais adequada seria  programação concomitante. Entretanto, o termo programação concorrente
+                        já está solidamente estabelecido no Brasil. Algumas vezes é usado o termo programação paralela com o mesmo 
+                        sentido. É comum em sistemas multiusuário que um mesmo programa seja executado simultaneamente por vários
+                        usuários. Por exemplo, um editor de texto. Entretanto, ter 10 execuções simultâneas do editor de texto
+                        não faz dele um programa concorrente. O que se tem  são 10 processos independentes executando o
+                        mesmo programa seqüencial (compartilhando o mesmo código). Cada processo tem a sua área de dados e
+                        ignora a existência das outras execuções do programa. Esses processos não interagem entre si (não trocam informações).
+                        Um programa é considerado concorrente quando ele (o próprio programa, durante a sua execução) origina diferentes
+                        processos. Esses processos, em geral, irão interagir entre si.</p>
+                    <p><span>Motivação</span><br>A programação concorrente é mais complexa que a programação seqüencial. Um programa
+                        concorrente pode apresentar todos os tipos de erros que aparecem nos programas seqüenciais e, 
+                        adicionalmente, os erros associados com as interações entre os processos. Muitos erros dependem 
+                        do exato instante de tempo em que o escalonador do sistema operacional realiza um chaveamento 
+                        de contexto. Isso torna muitos erros difíceis de reproduzir e de identificar. Apesar da maior
+                        complexidade, existem muitas áreas nas quais a programação concorrente é vantajosa. Em sistemas nos
+                        quais existem vários processadores (máquinas paralelas ou sistemas distribuídos), é possível aproveitar
+                        esse paralelismo e acelerar a execução do programa. Mesmo em sistemas com um único processador,
+                        existem razões para o seu uso em vários tipos de aplicações<br><br>Considere um programa que deve
+                        ler registros de um arquivo, colocar em um formato apropriado e então enviar para uma impressora
+                        física (em oposição a uma impressora lógica ou virtual, implementada com arquivos). Podemos fazer
+                        isso com um programa seqüencial que, dentro de um laço, faz as três operações (ler, formatar e
+                        imprimir registro).<br><br>Inicialmente o processo envia um comando para a leitura do arquivo e fica
+                        bloqueado. O disco então é acionado para realizar a operação de leitura. Uma vez concluída a leitura, o
+                        processo realiza a formatação e inicia a transferência dos dados para a impressora. Como trata-se
+                        de uma impressora física, o processo executa um laço no qual os dados são enviados para a porta 
+                        serial ou paralela apropriada. Como o buffer da impressora é relativamente pequeno, o processo
+                        fica preso até o final da impressão. O disco e a impressora nunca trabalham simultaneamente, 
+                        embora isso seja possível. É o programa seqüencial que não consegue ocupar ambos.Vamos agora
+                        considerar um programa concorrente como o mostrado na figura 2 para realizar a impressão do
+                        arquivo. Dois processos dividem o trabalho. O processo leitor é responsável por ler registros do
+                        arquivo, formatar e colocar em um buffer na memória. O processo impressor retira os dados do
+                        buffer e envia para a impressora. É suposto aqui que os dois  processos possuem acesso à memória
+                        onde está o buffer. Este programa é mais eficiente, pois consegue manter o disco e a impressora
+                        trabalhando simultaneamente. O tempo total para realizar  a impressão do arquivo vai ser menor.
+                        O uso da programação concorrente é natural nas aplicações que apresentam paralelismo intrínseco,
+                        ditas aplicações inerentemente paralelas. Nessas aplicações pode-se distinguir facilmente funções
+                        para serem realizadas em paralelo. Este é o caso do spooling de impressão, exemplo que será apresentado
+                        a seguir. Pode-se dizer que, em geral, a programação concorrente tem aplicação natural na construção
+                        de sistemas que tenham de implementar serviços que são</p><p><span>Especificação do paralelismo</span><br>
+                        Para construir um programa concorrente, antes de mais nada, é necessário ter a capacidade de
+                        especificar o paralelismo dentro do programa. Essa especificação pode ser feita de diversas maneiras.
+                        Uma delas utiliza os comandos fork, quit e join [CON63]. Outras maneiras serão apresentadas na seção 4.
+                        O comando (ou função) fork pode ser implementado de duas maneiras distintas: ele pode criar um novo
+                        processo ou criar apenas um novo fluxo de execução dentro de um processo já existente. A função
+                        fork retorna um número inteiro que é a identificação do novo processo ou do novo fluxo criado.
+                        Um fluxo de execução também é denominado linha de execução ou thread.<br><br>Para construir Um
+                        programa concorrente, antes de mais nada, é necessário ter a capacidade de especificar o paralelismo
+                        dentro do programa. Essa especificação pode ser feita de diversas maneiras. Uma delas utiliza os
+                        comandos fork, quit e join [CON63]. Outras maneiras serão apresentadas na seção 4.O comando (ou função)
+                        fork pode ser implementado de duas maneiras distintas: ele pode criar um novo processo ou criar apenas
+                        um novo fluxo de execução dentro de um processo já existente. A função fork retorna um número inteiro
+                        que é a identificação do novo processo ou do novo fluxo criado. Um fluxo de execução também é denominado
+                        linha de execução ou thread.
                 </div>
             </div>
         </section>
-
-        <!-- post -->
-
-        <!-- Footer -->
-
-
-        <script>
-
-            // Navaigation Bar
-
-        </script>
-
-
     </body>
-
 </html>
