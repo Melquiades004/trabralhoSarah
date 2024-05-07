@@ -8,9 +8,26 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="short icon" href="../assets/img/favicon.ico">
+    <link rel="stylesheet" href="../assets/css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;600&display=swap" rel="stylesheet">
   </head>
   <body>
+        <header>
+            <a href="#"><img src="../assets/img/vecteezy_logotipo-del-lenguaje-de-programacion-3d-python_12697295.png" alt="logo" class="logo"></a>
+            <!--Paginas-->
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="data.html">Estrutura de Dados</a></li>
+                <li><a href="concurrent.html">Programacao concorrente</a></li>
+                <li><a href="ml.html">Machine Learning</a></li>
+                <li><a href="dl.html">Deep Learning</a></li>
+                <li><a href="cv.html">Visao Computacional</a></li>
+                <li><a href="memory.html">Memoria</a></li>
+                <li><a href="micro.html">Micro Python</a></li>
+                <li><a href="info.html">Contato</a></li>
+            </ul>
+        </header>
     <form action="">
       <div class="title">
         <h2>Contato</h2>
@@ -30,9 +47,14 @@
         <textarea name="" id = "message"></textarea>
       </div>
       <div class="action">
-        <input type="submit" value = "SEND MESSAGE">
-        <input type="reset" value = "RESET">
+        <input type="submit" value = "Enviar Mensagem" onclick="showMessage()">
+        <input type="reset" value = "Apagar">
       </div>
     </form>
+    <script>
+  function showMessage() {
+    alert("Sua mensagem foi enviada!");
+  }
+</script>
   </body>
 </html>
